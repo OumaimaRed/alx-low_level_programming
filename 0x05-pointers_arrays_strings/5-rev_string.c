@@ -1,20 +1,26 @@
 #include "main.h"
 
 /**
-  * puts2 - prints the even number
-  * @str: the string
+  * rev_string - reverse a string
+  * @s: the string
   *
   * Return: void
   */
-void puts2(char *str)
+void rev_string(char *s)
 {
+	int length = 0;
 	int i = 0;
+	char tmp;
 
-	while (*(str + i) != 0)
+	while (*(s + length) != 0)
+		length++;
+	length--;
+	while (length >= i)
 	{
-		if (i % 2 == 0)
-			_putchar(*(str + i));
+		tmp = *(s + length);
+		*(s + length) = *(s + i);
+		*(s + i) = tmp;
+		length--;
 		i++;
 	}
-	_putchar('\n');
 }
